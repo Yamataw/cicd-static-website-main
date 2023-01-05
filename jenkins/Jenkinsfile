@@ -14,12 +14,12 @@ pipeline {
     cron('0 1 * * 1-5')
   }
 
-  agent { node { label 'master' } }
+  agent { node { label 'main' } }
   
   stages {
     stage('Step 1') {
       echo "Step 1"
-      git branch: "master",
+      git branch: "main",
         credentialsId: 'CLEGSSS',
         url: 'https://github.com/Yamataw/cicd-static-website.git'
     }
