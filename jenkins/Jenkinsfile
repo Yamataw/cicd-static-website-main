@@ -14,14 +14,14 @@ pipeline {
     cron('0 1 * * 1-5')
   }
 
-  agent { node { label 'main' } }
+  agent { node { label 'master' } }
+  
   stages {
-	steps{
-    	stage('Step 1') {
-    	  echo "Step 1"
-    	  git branch: "main",
-        	credentialsId: 'CLEGSSS',
-       	 url: 'https://github.com/Yamataw/cicd-static-website.git'}
+    stage('Step 1') {
+      echo "Step 1"
+      git branch: "master",
+        credentialsId: 'YourGithubSshCredentials',
+        url: 'https://github.com/yourAccount/cicd-static-website.git'
     }
     stage('Step 2') {
       sh "docker build -t ${IMAGE_NAME}:${IMAGE_REL} -f ../docker/Dockerfile"
@@ -45,6 +45,5 @@ pipeline {
         }
       }
     }
+  }
 }
-}
-
