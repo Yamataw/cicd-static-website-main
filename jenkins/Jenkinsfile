@@ -14,7 +14,7 @@ pipeline {
     cron('0 1 * * 1-5')
   }
 
-  agent { node { label 'maxime.henri' } }
+//  agent { node { label 'maxime.henri' } }
   
   stages {
     stage('Step 1') {
