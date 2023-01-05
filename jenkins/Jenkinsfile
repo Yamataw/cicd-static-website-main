@@ -20,8 +20,8 @@ pipeline {
     stage('Step 1') {
       echo "Step 1"
       git branch: "master",
-        credentialsId: 'YourGithubSshCredentials',
-        url: 'https://github.com/yourAccount/cicd-static-website.git'
+        credentialsId: 'CLEGSSS',
+        url: 'https://github.com/Yamataw/cicd-static-website.git'
     }
     stage('Step 2') {
       sh "docker build -t ${IMAGE_NAME}:${IMAGE_REL} -f ../docker/Dockerfile"
@@ -33,7 +33,7 @@ pipeline {
         script {
           final String url = "http://localhost:${TEST_LOCAL_PORT}/index.html"
           final def (String response, int code) =
-                            sh(script: "curl -s -w '\\n%{response_code}', returnStdout: true)
+                            sh(script: "curl -s -w '\\n%{response_code}'", returnStdout: true)
                                 .trim()
                                 .tokenize("\n")
 
