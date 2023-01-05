@@ -15,8 +15,8 @@ pipeline {
   }
 
   agent { node { label 'main' } }
-  steps{
-  stages {
+  stages{
+  steps {
     stage('Step 1') {
       echo "Step 1"
       git branch: "main",
