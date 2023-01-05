@@ -13,7 +13,7 @@ pipeline {
   triggers {
     cron('0 1 * * 1-5')
   }
-
+	// agent à set sur l'interface Jenkins
     agent { node { label 'master' } }
   
   stages {
@@ -29,6 +29,7 @@ steps{
 steps{
 	sh "ls docker"
 sh "pwd"
+//Erreur lors du build ? pas d'accès à internet ou config manuelle à faire 
 	sh "docker run hello-world"
       sh "docker build  -t ${IMAGE_NAME}:${IMAGE_REL} docker"
       sh "[ -z \"\$(docker ps -a | grep ${CONTAINER_NAME} 2>/dev/null)\" ] || docker rm -f container-static-ws"
