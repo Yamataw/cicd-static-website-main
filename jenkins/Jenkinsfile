@@ -16,11 +16,12 @@ pipeline {
 
   agent { node { label 'main' } }
   stages {
-    stage('Step 1') {
-      echo "Step 1"
-      git branch: "main",
-        credentialsId: 'CLEGSSS',
-        url: 'https://github.com/Yamataw/cicd-static-website.git'
+	steps{
+    	stage('Step 1') {
+    	  echo "Step 1"
+    	  git branch: "main",
+        	credentialsId: 'CLEGSSS',
+       	 url: 'https://github.com/Yamataw/cicd-static-website.git'}
     }
     stage('Step 2') {
       sh "docker build -t ${IMAGE_NAME}:${IMAGE_REL} -f ../docker/Dockerfile"
