@@ -22,8 +22,8 @@ steps{
       echo "Step 1"
     
       git branch: "main",
-        
-        url: 'https://github.com/Yamataw/cicd-static-website.git'
+       	credentialsId: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCvjMIhXqa1o40CrmAgYpIWsC1aV2u5xwiUpUmz+rnVam4/UUwhczBaaOY9jFRj6IN38PVXNqgkMoevVPqasraz6G4SgX463fcmiKe+b1EwhROhnG6q+ho5TEzz2yzJPaqUyN6skhJAqsBCuZ4Lpt9utag0hTSdN4SSvnPR8duER07oT3UvCDmXHdPLvdlHqzbFdXzjndS0h6a7D4yVSqnzPlbROCZ6pF0NiKyt0u3O2u6aeb7zs8K1Ee0ps921vpUSwcQpR8x09kX3yIuqCGDlvdQ8/2tTf9XAeML2JF68T9lXqkwi/RD2xdWaZiW5Fdxfj0GbgwtQ2d+HA/rhnjXa8mjx9MmA+GwJcU0FWPAWHW6m9sa/GGtKRIHQ8S9KKDTWk8dptP7BMJvoX2rPRjl07BqwhUXRtS8J8mg+56eRpDtvQCJU8nsvnv8HWi3vPsnyBejpuCffBLG6yov7gjHhyWQYo2/GMBWyc2YD0SBoL8kI0FJWoeKWEfLh4AIGIaE= yamataw@devops",
+        url: 'git@github.com:Yamataw/cicd-static-website-main.git'
     }}
     stage('Step 2') {
 steps{
