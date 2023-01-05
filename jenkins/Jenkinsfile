@@ -14,7 +14,11 @@ pipeline {
     cron('0 1 * * 1-5')
   }
 
-//  agent { node { label 'maxime.henri' } }
+  agent {
+docker {
+image 'maven:3.8.1-adoptopenjdk-11'	
+args '-v /root/.m2:/root/.m2'
+}
   
   stages {
     stage('Step 1') {
