@@ -15,7 +15,6 @@ pipeline {
   }
 
   agent { node { label 'main' } }
-  stages{
   steps {
     stage('Step 1') {
       echo "Step 1"
@@ -47,4 +46,4 @@ pipeline {
     }
   }
 }
-}
+
